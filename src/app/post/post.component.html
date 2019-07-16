@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+<h2>Post   </h2>
+<div *ngFor="let post of posts">
+    <h3>
+        <a [title]="'Detalles '+post.name">{{post.name}}</a>
+    </h3>
+    <p *ngIf="post.description">
+        Descripcion: {{post.description}}
+    </p>
+    <p *ngIf="post.id">
+            Id: {{post.id}}
+    </p>
+    <p *ngIf="post.img">
+            <img src="{{post.img}}"/> 
+    </p>
+    <p *ngIf="post.rankin">
+        Rankin: {{post.rank}}
+        
+    </p>
+    <ng-container *ngFor="let i of [ ].constructor(post.rank)">
+            <span class="fa fa-star checked"></span>
+    </ng-container>
+    
+    
+</div>
